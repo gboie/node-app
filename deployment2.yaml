@@ -1,0 +1,9 @@
+service:
+  name: k8s
+  identifier: k8s
+  serviceDefinition:
+    type: Kubernetes
+    spec: {}
+  gitOpsEnabled: true
+  orgIdentifier: default
+  projectIdentifier: rebellis
