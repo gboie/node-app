@@ -3,7 +3,21 @@ service:
   identifier: k8s
   serviceDefinition:
     type: Kubernetes
-    spec: {}
+    spec:
+      manifests:
+        - manifest:
+            identifier: deployment
+            type: DeploymentRepo
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: github2
+                  gitFetchType: Branch
+                  paths:
+                    - deployment.yaml
+                  branch: master
+                  repoName: node-app
   gitOpsEnabled: true
   orgIdentifier: default
   projectIdentifier: rebellis
